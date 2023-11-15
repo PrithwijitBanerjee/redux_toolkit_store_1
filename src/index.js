@@ -3,11 +3,31 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {configureStore} from '@reduxjs/toolkit'
+import { Provider } from 'react-redux';
+import {Store} from './Store'
+
+// const initialState={
+//   name:"pritam",
+//   age:"26",
+//   status:"Programmer"
+// }
+// const store=configureStore({
+//   reducer:(state)=>{
+//     return state
+//   },
+//   preloadedState:initialState
+// })
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={Store}>
     <App />
+    </Provider>
+    
   </React.StrictMode>
 );
 
